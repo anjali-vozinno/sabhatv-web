@@ -1,0 +1,17 @@
+
+<!-- <header>
+  <h2>
+    {{gImage}}
+  </h2>
+</header> -->
+<body class="gallery-body">
+  <div *ngIf="gImage">
+        <div class="row" *ngFor="let g of gImage">
+            <div class="col-sm-4 col-sm-4">
+                <img src="{{g.thumburl}}" class="ga-image">
+            </div>
+        </div> 
+
+  </div>
+</body>
+

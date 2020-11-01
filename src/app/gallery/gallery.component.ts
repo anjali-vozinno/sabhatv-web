@@ -1,0 +1,19 @@
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
+@Component({
+  selector: 'app-gallery',
+  templateUrl: './gallery.component.html',
+  styleUrls: ['./gallery.component.css']
+})
+export class GalleryComponent implements OnInit {
+  @Input() gImage:string[];
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  close() {
+    
+  }
+
+}

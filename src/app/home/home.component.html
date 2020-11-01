@@ -1,0 +1,192 @@
+
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="#">Logo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link">Home </a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" (click)='showImages("live")'>Live </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#originals">Originals</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">TalkShow</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">New Arrivals </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Documentries </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Series</a>
+          </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">hello</button> -->
+      </form>
+    </div>
+  </nav>
+  <app-imagelink [linkRef]='linktoShow'></app-imagelink>
+
+<!-- carousel section -->
+<!-- <header class="header"></header> -->
+<div class="banner carousel">
+<!-- <div class="container-fluid"> -->
+ <ngb-carousel *ngIf="slides">
+    <ng-template ngbSlide *ngFor="let slide of slides">
+      <div class="wrapper">
+        <img src="{{slide.thumburl}}" class="image_size" alt="Random slide">
+      </div>      
+    </ng-template>   
+  </ngb-carousel>
+</div>
+<!-- </header>  -->
+
+<app-gallery [gImage]="gallery"></app-gallery>
+
+<!-- categories sections -->
+
+<div id="categories" class="sections">
+
+  <!-- live section -->
+
+  <div class="live-section row">
+    <div class="col-10">
+      <h6>Live</h6>
+    </div>
+    <div class="col-2">
+      <a role="button" (click)="galleryImage('live')">
+          <h6> View All</h6>
+      </a>
+    </div>
+  </div>
+  
+   <div *ngIf="live_videos"> 
+      <carousel>  
+        <div class="carousel-cell"  *ngFor="let live_image of live_videos">
+          <img src="{{live_image.thumburl}}" class="carousel-image" alt="live stream">
+        </div>
+      </carousel>
+    </div>
+ 
+<!-- new arrivals section -->
+
+  <div class="row">
+    <div class="col-10">
+      <h6>New Arrivals</h6>
+    </div>
+    <div class="col-2">
+      <a role="button" (click)="galleryImage('arrivals')">
+          <h6> View All</h6>
+      </a>
+    </div>
+  </div>
+
+  <div *ngIf="arrivals">
+    <carousel>
+      <div class="carousel-cell"  *ngFor="let a of arrivals">
+        <img src="{{a.thumburl}}" class="carousel-image" alt="new arrivals" (click)="getId(a.id);openModal(content)">
+      </div>
+    </carousel>
+  </div>
+  
+
+ <!-- documentary section -->
+
+  <div class="row">
+    <div class="col-10">
+      <h6>Documentries</h6>
+    </div>
+    <div class="col-2">
+      <a role="button" (click)="galleryImage('documentries')">
+          <h6> View All</h6>
+      </a>
+    </div>
+  </div>
+
+  <div *ngIf="documentries">
+    <carousel>
+      <div class="carousel-cell"  *ngFor="let d of documentries">
+        <img src="{{d.thumburl}}" class="carousel-image" alt="Documentaries">
+      </div>
+    </carousel>
+  </div>
+
+  <!-- series -->
+
+<div class="row">
+  <div class="col-10">
+    <h6>Series</h6>
+  </div>
+  <div class="col-2">
+    <a role="button" (click)="galleryImage('series')">
+        <h6> View All</h6>
+    </a>
+  </div>
+</div>
+
+  <div *ngIf="originals">
+    <carousel>
+      <div class="carousel-cell"  *ngFor="let sa of series">
+    
+        <img src='{{sa.thumburl}}' alt="series videos">
+      
+      </div>
+    </carousel>
+  </div>
+
+  <!-- Sabha TV Originals -->
+  <div id='originals'>
+  <div class="row">
+    <div class="col-10">
+      <h6>Sabha TV Originals</h6>
+    </div>
+    <div class="col-2">
+      <a role="button" (click) ="galleryImage('originals')">
+          <h6> View All</h6>
+      </a>
+    </div>
+  </div>
+
+  <div *ngIf="originals">
+    <carousel>
+      <div class="carousel-cell"  *ngFor="let o of originals">
+        <img src="{{o.thumburl}}"  alt="originals">
+      </div>
+    </carousel>
+  </div>
+</div>
+
+  <!-- Talk Show -->
+
+  <div class="row">
+    <div class="col-10">
+      <h6>Talk Show</h6>
+    </div>
+    <div class="col-2">
+      <!-- <a role="button" (click)="open(mymodal);galleryImage('talkshow')"> -->
+        <a role="button" (click) ="galleryImage('talkshow')">
+          <h6> View All</h6>
+      </a>
+    </div>
+  </div>
+
+  <div *ngIf="talk_show">
+    <carousel>
+      <div class="carousel-cell"  *ngFor="let t of talk_show">
+        <img src="{{t.thumburl}}"  alt="talk show">
+      </div>
+    </carousel>
+  </div>
+</div>
+
+

@@ -1,0 +1,40 @@
+* {
+    background-color: black;
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:active, a:hover {
+    color: orange;
+}
+
+ngb-carousel img {
+    width: 100%;
+    height: 95%;
+}
+ngb-carousel {
+    width: inherit;
+    height: inherit;
+}
+
+.carousel-indicators {
+    z-index: -1;
+}
+
+.sections {
+    padding: 50px 0px;
+}
+
+.carousel-image {
+    position: relative;
+}
+
+#mymodal:active {
+    z-index: 1000;
+}
