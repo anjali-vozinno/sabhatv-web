@@ -1,0 +1,13 @@
+
+<h1>
+    {{componentName}}
+</h1>
+
+<div *ngIf='videos'>
+        <carousel>
+          <div class="carousel-cell"  *ngFor="let a of videos">
+            <img src="{{a.thumburl}}" class="carousel-image" alt="new arrivals">
+          </div>
+        </carousel>
+</div>
+

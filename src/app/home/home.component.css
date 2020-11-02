@@ -5,14 +5,6 @@
     color: white;
 }
 
-a {
-    text-decoration: none;
-    color: white;
-}
-
-a:active, a:hover {
-    color: orange;
-}
 
 ngb-carousel img {
     width: 100%;

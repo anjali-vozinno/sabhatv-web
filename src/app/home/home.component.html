@@ -1,44 +1,6 @@
 
-<nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href="#">Logo</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link">Home </a>
-        </li>
-        <li class="nav-item active">
-            <a class="nav-link" (click)='showImages("live")'>Live </a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#originals">Originals</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#">TalkShow</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#">New Arrivals </a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Documentries </a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Series</a>
-          </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">hello</button> -->
-      </form>
-    </div>
-  </nav>
-  <app-imagelink [linkRef]='linktoShow'></app-imagelink>
+<!-- banner image display -->
 
-<!-- carousel section -->
-<!-- <header class="header"></header> -->
 <div class="banner carousel">
 <!-- <div class="container-fluid"> -->
  <ngb-carousel *ngIf="slides">
@@ -49,9 +11,9 @@
     </ng-template>   
   </ngb-carousel>
 </div>
-<!-- </header>  -->
 
-<app-gallery [gImage]="gallery"></app-gallery>
+
+<!-- <app-gallery [gImage]="gallery"></app-gallery> -->
 
 <!-- categories sections -->
 

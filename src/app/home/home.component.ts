@@ -1,7 +1,7 @@
 import { EOF } from '@angular/compiler';
-import { Component, OnInit,SimpleChanges,ViewEncapsulation } from '@angular/core';
+import { Component, OnChanges, OnInit,SimpleChanges,ViewEncapsulation } from '@angular/core';
 import { DataService } from '../services/data.service';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,15 +15,10 @@ export class HomeComponent implements OnInit {
   live_videos;
   arrivals;
   documentries;
-  series: string[] = [];
+  series: string[] = []; 
   originals;
-  talk_show;
-  details:[];
-  cast:[]; gallery: string[] = [];
-  linktoShow;
+  talk_show; gallery: string[] = [];
   
-  closeResult: string;
-  title = 'appBootstrap';
  
   constructor(private dataservice:DataService,private modalService: NgbModal, 
     private router:Router) { 
@@ -33,10 +28,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  // ngOnChanges(changes:SimpleChanges) {
-  //   this.showImages(this.linktoShow);
-  // }
 
   getBanners() {
     this.dataservice.getBanners()
@@ -49,27 +40,24 @@ export class HomeComponent implements OnInit {
   getHomeVideos() {           
     this.dataservice.getHomeVideos()
     .subscribe((resp: any) => {
-      console.log(resp.data)       
+      
       this.documentries = resp.data[0]['videos'];
       this.live_videos = resp.data[1]['videos'];
       this.arrivals = resp.data[2]['videos'];
       this.originals = resp.data[3]['videos'];
       this.talk_show = resp.data[4]['videos'];  
-      
-       
-
         for(var j in resp.data) {
           for(var k in resp.data[j].videos) {
             if(resp.data[j].videos[k]['type'] == 'series') {           
-              this.series.push(resp.data[j].videos[k])
+              this.series.push(resp.data[j].videos[k]);
+                            
             }
           }
         }      
     
     })
+   
   }
-
-
   galleryImage(a) {
     if(a == 'live') {
       this.gallery = this.live_videos;
@@ -92,13 +80,13 @@ export class HomeComponent implements OnInit {
     
   }
 
-  showImages(e) {
-    this.linktoShow = e;
-    console.log("linktoshow is " + this.linktoShow);
-    this.router.navigateByUrl('livepage')
+  // showImages(e) {
+  //   this.linktoShow = e;
+  //   console.log("linktoshow is " + this.linktoShow);
+  //   this.router.navigateByUrl('livepage')
     
 
-  }
+  // }
 
 
 

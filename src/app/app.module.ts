@@ -17,6 +17,8 @@ import {VgOverlayPlayModule} from '@videogular/ngx-videogular/overlay-play';
 import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
 import { GalleryComponent } from './gallery/gallery.component';
 import { ImagelinkComponent } from './imagelink/imagelink.component';
+import { NavbarComponent } from './navbar/navbar.component';
+// import { ActivatedRoute } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { ImagelinkComponent } from './imagelink/imagelink.component';
     HomeComponent,
     FooterComponent,
     GalleryComponent,
-    ImagelinkComponent
+    ImagelinkComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +43,7 @@ import { ImagelinkComponent } from './imagelink/imagelink.component';
     VgControlsModule,
     VgOverlayPlayModule,
     VgBufferingModule
+    // ActivatedRoute
     // CarouselModule
   ],
   providers: [],

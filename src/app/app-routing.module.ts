@@ -8,7 +8,7 @@ const routes: Routes = [
     path: '', component: HomeComponent
   },
   {
-    path:'livepage', component: ImagelinkComponent
+    path:'livepage/:cname', component: ImagelinkComponent
   }
 ];
 

@@ -1,13 +1,25 @@
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Subject, BehaviorSubject } from 'rxjs';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
+ 
+// private imageArray = new Subject<string[]>();
+// imageArrayParent$ = this.imageArray.asObservable();
+
+// allPassedData: BehaviorSubject<any> = new BehaviorSubject<any>([]);
+
 
   constructor(private http:HttpClient) { }
+
+//   storePassedObject(passedData) {
+//     this.allPassedData.next(passedData);
+   
+// }
 
   getBanners() {  
     const httpOptions = {
@@ -20,7 +32,6 @@ export class DataService {
   }
 
   getHomeVideos() {  
-
     const options = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
@@ -29,7 +40,6 @@ export class DataService {
   };      
       return this.http.get('https://api.sabha.tv/v1/gethomevideos', options);
   }
-
 
   getVideoById(id){
     const options = {
