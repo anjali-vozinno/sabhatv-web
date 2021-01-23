@@ -18,6 +18,8 @@ import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
 import { GalleryComponent } from './gallery/gallery.component';
 import { ImagelinkComponent } from './imagelink/imagelink.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ModalComponent } from './modal/modal.component';
+import { ShowmodalComponent } from './showmodal/showmodal.component';
 // import { ActivatedRoute } from '@angular/router';
 
 @NgModule({
@@ -27,7 +29,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     FooterComponent,
     GalleryComponent,
     ImagelinkComponent,
-    NavbarComponent
+    NavbarComponent,
+    ModalComponent,
+    ShowmodalComponent
   ],
   imports: [
     BrowserModule,
